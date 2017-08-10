@@ -2,7 +2,7 @@
 /* lib/curl_config.h.in.  Generated from configure.ac by autoheader.  */
 
 /* Location of default ca bundle */
-#define CURL_CA_BUNDLE "/etc/ssl/certs/ca-certificates.crt"
+/* #define CURL_CA_BUNDLE "/etc/ssl/certs/ca-certificates.crt" */
 
 /* define "1" to use built in CA store of SSL library */
 /* #undef CURL_CA_FALLBACK */
@@ -23,16 +23,16 @@
 /* #undef CURL_DISABLE_FILE */
 
 /* to disable FTP */
-/* #undef CURL_DISABLE_FTP */
+#define CURL_DISABLE_FTP 1
 
 /* to disable Gopher */
-/* #undef CURL_DISABLE_GOPHER */
+#define CURL_DISABLE_GOPHER 1
 
 /* to disable HTTP */
 /* #undef CURL_DISABLE_HTTP */
 
 /* to disable IMAP */
-/* #undef CURL_DISABLE_IMAP */
+#define CURL_DISABLE_IMAP 1
 
 /* to disable LDAP */
 #define CURL_DISABLE_LDAP 1
@@ -47,34 +47,34 @@
 /* #undef CURL_DISABLE_LIBCURL_OPTION */
 
 /* to disable POP3 */
-/* #undef CURL_DISABLE_POP3 */
+#define CURL_DISABLE_POP3 1
 
 /* to disable proxies */
 /* #undef CURL_DISABLE_PROXY */
 
 /* to disable RTSP */
-/* #undef CURL_DISABLE_RTSP */
+#define CURL_DISABLE_RTSP 1
 
 /* to disable SMB/CIFS */
-/* #undef CURL_DISABLE_SMB */
+#define CURL_DISABLE_SMB 1
 
 /* to disable SMTP */
-/* #undef CURL_DISABLE_SMTP */
+#define CURL_DISABLE_SMTP 1
 
 /* to disable TELNET */
-/* #undef CURL_DISABLE_TELNET */
+#define CURL_DISABLE_TELNET 1
 
 /* to disable TFTP */
-/* #undef CURL_DISABLE_TFTP */
+#define CURL_DISABLE_TFTP 1
 
 /* to disable TLS-SRP authentication */
-/* #undef CURL_DISABLE_TLS_SRP */
+#define CURL_DISABLE_TLS_SRP 1
 
 /* to disable verbose strings */
 /* #undef CURL_DISABLE_VERBOSE_STRINGS */
 
 /* Definition to make a library symbol externally visible. */
-#define CURL_EXTERN_SYMBOL __attribute__ ((__visibility__ ("default")))
+#define CURL_EXTERN_SYMBOL __attribute__((__visibility__("default")))
 
 /* your Entropy Gathering Daemon socket pathname */
 /* #undef EGD_SOCKET */
@@ -89,7 +89,7 @@
 #define GETNAMEINFO_QUAL_ARG1 const
 
 /* Define to the type of arg 1 for getnameinfo. */
-#define GETNAMEINFO_TYPE_ARG1 struct sockaddr *
+#define GETNAMEINFO_TYPE_ARG1 struct sockaddr*
 
 /* Define to the type of arg 2 for getnameinfo. */
 #define GETNAMEINFO_TYPE_ARG2 socklen_t
@@ -809,7 +809,8 @@
 #define PACKAGE "curl"
 
 /* Define to the address where bug reports for this package should be sent. */
-#define PACKAGE_BUGREPORT "a suitable curl mailing list: https://curl.haxx.se/mail/"
+#define PACKAGE_BUGREPORT \
+  "a suitable curl mailing list: https://curl.haxx.se/mail/"
 
 /* Define to the full name of this package. */
 #define PACKAGE_NAME "curl"
@@ -833,7 +834,7 @@
 #define RECV_TYPE_ARG1 int
 
 /* Define to the type of arg 2 for recv. */
-#define RECV_TYPE_ARG2 void *
+#define RECV_TYPE_ARG2 void*
 
 /* Define to the type of arg 3 for recv. */
 #define RECV_TYPE_ARG3 size_t
@@ -848,16 +849,16 @@
 #define RETSIGTYPE void
 
 /* Define to the type qualifier of arg 5 for select. */
-#define SELECT_QUAL_ARG5 
+#define SELECT_QUAL_ARG5
 
 /* Define to the type of arg 1 for select. */
 #define SELECT_TYPE_ARG1 int
 
 /* Define to the type of args 2, 3 and 4 for select. */
-#define SELECT_TYPE_ARG234 fd_set *
+#define SELECT_TYPE_ARG234 fd_set*
 
 /* Define to the type of arg 5 for select. */
-#define SELECT_TYPE_ARG5 struct timeval *
+#define SELECT_TYPE_ARG5 struct timeval*
 
 /* Define to the function return type for select. */
 #define SELECT_TYPE_RETV int
@@ -869,7 +870,7 @@
 #define SEND_TYPE_ARG1 int
 
 /* Define to the type of arg 2 for send. */
-#define SEND_TYPE_ARG2 void *
+#define SEND_TYPE_ARG2 void*
 
 /* Define to the type of arg 3 for send. */
 #define SEND_TYPE_ARG3 size_t
@@ -941,7 +942,7 @@
 /* #undef USE_LIBSSH2 */
 
 /* If you want to build curl with the built-in manual */
-#define USE_MANUAL 1
+/* #undef USE_MANUAL */
 
 /* if mbedTLS is enabled */
 /* #undef USE_MBEDTLS */
@@ -1013,7 +1014,7 @@
 
 /* Enable large inode numbers on Mac OS X 10.5.  */
 #ifndef _DARWIN_USE_64_BIT_INODE
-# define _DARWIN_USE_64_BIT_INODE 1
+#define _DARWIN_USE_64_BIT_INODE 1
 #endif
 
 /* Number of bits in a file offset, on hosts where this is settable. */
